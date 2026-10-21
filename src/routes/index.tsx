@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 
 const t = {
   ar: {
-    dir: "rtl", switch: "English", nav: ["المزايا", "كيف يعمل", "تواصل"], cta: "اطلب عرضاً تجريبياً",
+    dir: "rtl", switch: "English", nav: ["المزايا", "كيف يعمل", "تواصل"], cta: "ادخل إلى لوحة التحكم",
     tag: "منصة إدارة الموارد البشرية بالذكاء الاصطناعي",
     h1a: "إدارة فريقك", h1b: "بتوازن تام.",
     sub: "ميزان يجمع الموظفين والعقود والرواتب والتقارير في مكان واحد، ويستخدم الذكاء الاصطناعي ليساعدك على اتخاذ قرارات أوضح وأسرع.",
@@ -37,7 +37,7 @@ const t = {
     foot: "© 2026 ميزان. جميع الحقوق محفوظة.",
   },
   en: {
-    dir: "ltr", switch: "العربية", nav: ["Features", "How it works", "Contact"], cta: "Request a demo",
+    dir: "ltr", switch: "العربية", nav: ["Features", "How it works", "Contact"], cta: "Open the dashboard",
     tag: "AI-powered HR & operations platform",
     h1a: "Run your team", h1b: "in perfect balance.",
     sub: "Mizan brings employees, contracts, payroll and reports into one place, and uses AI to help you make clearer, faster decisions.",
@@ -72,7 +72,7 @@ function Index() {
         </nav>
         <div className="flex items-center gap-3">
           <button onClick={() => setLang(lang === "ar" ? "en" : "ar")} className="rounded-full border border-border px-4 py-2 text-sm transition-colors hover:bg-muted">{c.switch}</button>
-          <a href="#contact" className="hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground sm:inline-block">{c.cta}</a>
+          <a href="/dashboard" className="hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground sm:inline-block">{c.cta}</a>
         </div>
       </header>
 
@@ -86,7 +86,7 @@ function Index() {
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">{c.sub}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="#contact" className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5">{c.cta}</a>
+            <a href="/dashboard" className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5">{c.cta}</a>
             <a href="#how" className="rounded-full border border-border px-7 py-3.5 font-medium transition-colors hover:bg-muted">{c.second}</a>
           </div>
         </div>
