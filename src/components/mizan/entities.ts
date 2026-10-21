@@ -25,9 +25,12 @@ export const contractFields = (clients: Client[]): FormField[] => [
   { name: "endDate", label: "تاريخ الانتهاء", type: "date", required: true },
 ];
 
+type V = Record<string, string>;
+const g = (v: V, k: string) => v[k] ?? "";
+
 export const saveClient = (v: Record<string, string>) =>
-  addItem("clients", { name: v.name, sector: v.sector ?? "", city: v.city ?? "", phone: v.phone ?? "", email: v.email ?? "" });
+  addItem("clients", { name: g(v, "name"), sector: g(v, "sector"), city: g(v, "city"), phone: g(v, "phone"), email: g(v, "email") });
 export const saveEmployee = (v: Record<string, string>) =>
-  addItem("employees", { name: v.name, role: v.role, department: v.department ?? "", email: v.email ?? "", startDate: v.startDate ?? "" });
+  addItem("employees", { name: g(v, "name"), role: g(v, "role"), department: g(v, "department"), email: g(v, "email"), startDate: g(v, "startDate") });
 export const saveContract = (v: Record<string, string>) =>
-  addItem("contracts", { title: v.title, clientId: v.clientId ?? "", value: Number(v.value) || 0, startDate: v.startDate, endDate: v.endDate });
+  addItem("contracts", { title: g(v, "title"), clientId: g(v, "clientId"), value: Number(g(v, "value")) || 0, startDate: g(v, "startDate"), endDate: g(v, "endDate") });
