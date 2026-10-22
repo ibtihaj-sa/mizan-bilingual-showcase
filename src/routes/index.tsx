@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import mark from "@/assets/mizan-mark.png";
 
@@ -69,6 +69,7 @@ function Index() {
         </div>
         <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
           {c.nav.map((n, i) => <a key={n} href={["#features", "#how", "#contact"][i]} className="transition-colors hover:text-foreground">{n}</a>)}
+          <Link to="/about" className="transition-colors hover:text-foreground">{lang === "ar" ? "عن ميزان" : "About"}</Link>
         </nav>
         <div className="flex items-center gap-3">
           <button onClick={() => setLang(lang === "ar" ? "en" : "ar")} className="rounded-full border border-border px-4 py-2 text-sm transition-colors hover:bg-muted">{c.switch}</button>
