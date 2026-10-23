@@ -43,7 +43,7 @@ function Contact() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
-  const [type, setType] = useState(inquiryTypes[0]);
+  const [type, setType] = useState<string>("استفسار تجاري");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
 
