@@ -1,162 +1,172 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import mark from "@/assets/mizan-mark.png";
+import { FileText, Link2, ListChecks, BarChart3, Building2, ShieldCheck, Settings2, FolderOpen } from "lucide-react";
+import { MarketingShell } from "@/components/mizan/MarketingShell";
+import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "ميزان Mizan — AI-powered HR & operations platform" },
-      { name: "description", content: "Mizan is an AI-powered HR and operations platform: employees, contracts, payroll and reports in one balanced place." },
-      { property: "og:title", content: "ميزان Mizan — AI-powered HR platform" },
-      { property: "og:description", content: "Employees, contracts, payroll and reports, balanced by AI." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
+  head: pageHead(
+    "منصة تقنية سعودية لتنظيم الأعمال والمستندات",
+    "ميزان MIZAN منصة تقنية سعودية قيد التطوير تساعد الشركات على تنظيم أعمالها ومستنداتها ومتطلباتها التشغيلية بصورة أوضح وأكثر كفاءة.",
+  ),
+  component: Home,
 });
 
-const t = {
-  ar: {
-    dir: "rtl", switch: "English", nav: ["المزايا", "كيف يعمل", "تواصل"], cta: "ادخل إلى لوحة التحكم",
-    tag: "منصة إدارة الموارد البشرية بالذكاء الاصطناعي",
-    h1a: "إدارة فريقك", h1b: "بتوازن تام.",
-    sub: "ميزان يجمع الموظفين والعقود والرواتب والتقارير في مكان واحد، ويستخدم الذكاء الاصطناعي ليساعدك على اتخاذ قرارات أوضح وأسرع.",
-    second: "شاهد كيف يعمل",
-    stats: [["موظف", "1,247"], ["عقد نشط", "89"], ["رضا", "94%"]],
-    overview: "نظرة عامة", side: ["الموظفون", "التقارير", "الإعدادات"],
-    fTitle: "كل ما يحتاجه فريق الموارد البشرية",
-    features: [
-      ["ملفات الموظفين", "سجل موحد لكل موظف، من التعيين إلى التقييم."],
-      ["العقود والامتثال", "تنبيهات ذكية قبل انتهاء العقود والوثائق."],
-      ["تقارير ذكية", "اسأل بلغتك واحصل على تقرير جاهز خلال ثوانٍ."],
-      ["العمليات اليومية", "طلبات الإجازات والموافقات في سير عمل واضح."],
-    ],
-    steps: ["اربط بياناتك", "دع ميزان ينظمها", "اتخذ القرار"], howTitle: "ثلاث خطوات للتوازن",
-    finalTitle: "جاهز لإدارة أكثر توازناً؟", finalSub: "احجز عرضاً مع فريقنا وابدأ خلال أيام.",
-    foot: "© 2026 ميزان. جميع الحقوق محفوظة.",
-  },
-  en: {
-    dir: "ltr", switch: "العربية", nav: ["Features", "How it works", "Contact"], cta: "Open the dashboard",
-    tag: "AI-powered HR & operations platform",
-    h1a: "Run your team", h1b: "in perfect balance.",
-    sub: "Mizan brings employees, contracts, payroll and reports into one place, and uses AI to help you make clearer, faster decisions.",
-    second: "See how it works",
-    stats: [["Employees", "1,247"], ["Active contracts", "89"], ["Satisfaction", "94%"]],
-    overview: "Overview", side: ["Employees", "Reports", "Settings"],
-    fTitle: "Everything your HR team needs",
-    features: [
-      ["Employee records", "One unified file per person, from hiring to review."],
-      ["Contracts & compliance", "Smart alerts before contracts and documents expire."],
-      ["Smart reports", "Ask in your own words and get a ready report in seconds."],
-      ["Daily operations", "Leave requests and approvals in one clear workflow."],
-    ],
-    steps: ["Connect your data", "Let Mizan organise it", "Make the call"], howTitle: "Three steps to balance",
-    finalTitle: "Ready for more balanced HR?", finalSub: "Book a demo with our team and get started in days.",
-    foot: "© 2026 Mizan. All rights reserved.",
-  },
-} as const;
+const capabilities = [
+  { icon: FileText, t: "تنظيم المستندات والمعلومات", d: "تجميع بيانات المنشأة وسجلاتها في مكان واحد منظم بدل تشتتها بين الملفات والرسائل." },
+  { icon: Link2, t: "ربط المتطلبات ذات الصلة", d: "ربط الأدلة والمتطلبات والإجراءات المترابطة لتسهيل المتابعة والمراجعة." },
+  { icon: ListChecks, t: "متابعة المهام والنواقص", d: "رؤية أوضح لما هو مكتمل وما يحتاج إلى متابعة أو استكمال." },
+  { icon: BarChart3, t: "مؤشرات تدعم القرار", d: "تقارير ومؤشرات مبنية على البيانات المُدخلة تساعد الإدارة على اتخاذ القرار." },
+];
 
-function Index() {
-  const [lang, setLang] = useState<"ar" | "en">("ar");
-  const c = t[lang];
+const audience = [
+  { icon: Building2, t: "الشركات والمنشآت", d: "التي تبحث عن طريقة أوضح لتنظيم أعمالها ومعلوماتها." },
+  { icon: ShieldCheck, t: "فرق الجودة والامتثال", d: "التي تتابع المتطلبات والأدلة والإجراءات باستمرار." },
+  { icon: Settings2, t: "فرق العمليات والإدارة", d: "التي تحتاج إلى رؤية واضحة للمهام والمتابعات." },
+  { icon: FolderOpen, t: "الجهات متعددة المستندات", d: "التي تتعامل مع مستندات ومتطلبات متعددة ومتشعبة." },
+];
+
+function Home() {
   return (
-    <div dir={c.dir} lang={lang} className="min-h-screen bg-background font-sans text-foreground">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
-          <img src={mark} alt="Mizan" className="h-8 w-auto" />
-          <span className="font-display text-xl font-bold">{lang === "ar" ? "ميزان" : "MIZAN"}</span>
-        </div>
-        <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
-          {c.nav.map((n, i) => <a key={n} href={["#features", "#how", "#contact"][i]} className="transition-colors hover:text-foreground">{n}</a>)}
-          <Link to="/about" className="transition-colors hover:text-foreground">{lang === "ar" ? "عن ميزان" : "About"}</Link>
-        </nav>
-        <div className="flex items-center gap-3">
-          <button onClick={() => setLang(lang === "ar" ? "en" : "ar")} className="rounded-full border border-border px-4 py-2 text-sm transition-colors hover:bg-muted">{c.switch}</button>
-          <a href="/dashboard" className="hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground sm:inline-block">{c.cta}</a>
-        </div>
-      </header>
-
-      <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-24 pt-12 lg:grid-cols-2">
+    <MarketingShell>
+      {/* Hero */}
+      <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-24 pt-16 lg:grid-cols-2">
         <div className="animate-rise">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-muted-foreground shadow-soft">
-            <span className="h-2 w-2 rounded-full bg-coral" />{c.tag}
+            <span className="h-2 w-2 rounded-full bg-coral" />
+            منصة تقنية سعودية — قيد التطوير
           </p>
           <h1 className="font-display text-5xl font-bold leading-tight md:text-6xl">
-            {c.h1a}<br /><span className="text-coral">{c.h1b}</span>
+            وضوح أكبر في<br />
+            <span className="text-coral">تنظيم أعمالك.</span>
           </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">{c.sub}</p>
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+            ميزان منصة تقنية تهدف إلى مساعدة الشركات على تنظيم أعمالها وإدارة عملياتها
+            ومستنداتها ومتطلباتها التشغيلية بصورة أكثر وضوحًا وكفاءة — من مكان واحد.
+          </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="/dashboard" className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5">{c.cta}</a>
-            <a href="#how" className="rounded-full border border-border px-7 py-3.5 font-medium transition-colors hover:bg-muted">{c.second}</a>
+            <Link
+              to="/contact"
+              className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            >
+              تواصل معنا
+            </Link>
+            <Link
+              to="/how-it-works"
+              className="rounded-full border border-border px-7 py-3.5 font-medium transition-colors hover:bg-muted"
+            >
+              استكشف ميزان
+            </Link>
           </div>
         </div>
 
+        {/* Abstract visual: organised documents */}
         <div className="animate-rise overflow-hidden rounded-3xl border border-border bg-card shadow-soft" style={{ animationDelay: "0.15s" }}>
           <div className="flex gap-1.5 border-b border-border px-4 py-3">
-            <span className="h-2.5 w-2.5 rounded-full bg-coral" /><span className="h-2.5 w-2.5 rounded-full bg-muted" /><span className="h-2.5 w-2.5 rounded-full bg-muted" />
+            <span className="h-2.5 w-2.5 rounded-full bg-coral" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted" />
           </div>
-          <div className="flex">
-            <aside className="w-36 space-y-4 bg-primary p-5 text-sm text-primary-foreground">
-              <img src={mark} alt="" className="mb-6 h-7 w-auto" />
-              {c.side.map((s, i) => <div key={s} className={i === 0 ? "font-medium" : "opacity-60"}>{s}</div>)}
-            </aside>
-            <div className="flex-1 p-6">
-              <h3 className="font-display text-lg font-semibold">{c.overview}</h3>
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                {c.stats.map(([l, v], i) => (
-                  <div key={l} className="rounded-xl bg-background p-3">
-                    <div className="font-display text-xl font-bold">{v}</div>
-                    <div className="text-xs text-muted-foreground">{l}</div>
-                    <div className="mt-2 h-1 rounded-full bg-muted"><div className="h-1 rounded-full bg-coral" style={{ width: `${[60, 45, 94][i]}%` }} /></div>
-                  </div>
-                ))}
+          <div className="space-y-4 p-6">
+            {[
+              { label: "المستندات", w: "82%", tone: "bg-primary/80" },
+              { label: "المتطلبات", w: "64%", tone: "bg-coral" },
+              { label: "المهام", w: "74%", tone: "bg-primary/80" },
+              { label: "المتابعات", w: "52%", tone: "bg-coral" },
+            ].map((r) => (
+              <div key={r.label} className="rounded-xl bg-background p-4">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="font-medium">{r.label}</span>
+                  <span className="text-xs text-muted-foreground">منظمة</span>
+                </div>
+                <div className="mt-3 h-1.5 rounded-full bg-muted">
+                  <div className={`h-1.5 rounded-full ${r.tone}`} style={{ width: r.w }} />
+                </div>
               </div>
-              <div className="mt-4 flex h-32 items-end gap-2 rounded-xl bg-background p-4">
-                {[40, 65, 50, 80, 60, 90, 72].map((h, i) => <div key={i} className={`flex-1 rounded-t-md ${i === 5 ? "bg-coral" : "bg-primary/80"}`} style={{ height: `${h}%` }} />)}
-              </div>
+            ))}
+            <div className="grid grid-cols-3 gap-3">
+              {["أدلة مربوطة", "نواقص محددة", "رؤية واضحة"].map((s) => (
+                <div key={s} className="rounded-xl border border-border bg-background p-3 text-center text-xs font-medium text-muted-foreground">
+                  {s}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section id="features" className="bg-card py-24">
+      {/* Capabilities */}
+      <section className="bg-card py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-display text-4xl font-bold">{c.fTitle}</h2>
+          <p className="text-sm font-bold text-coral">ماذا تقدم ميزان</p>
+          <h2 className="mt-3 font-display text-4xl font-bold">من التشتت إلى التنظيم</h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+            تركز ميزان على تحويل المعلومات المتفرقة إلى صورة واضحة قابلة للمتابعة والمراجعة،
+            مع الاستفادة من الذكاء الاصطناعي في التحليل والتنظيم.
+          </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {c.features.map(([h, d], i) => (
-              <div key={h} className="rounded-2xl border border-border bg-background p-6">
-                <div className="font-display text-sm font-bold text-coral">0{i + 1}</div>
-                <h3 className="mt-4 font-display text-lg font-semibold">{h}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
+            {capabilities.map((f) => (
+              <div key={f.t} className="rounded-2xl border border-border bg-background p-6">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy-soft text-primary">
+                  <f.icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-semibold">{f.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.d}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-10">
+            <Link to="/how-it-works" className="text-sm font-bold text-coral transition-colors hover:text-coral/80">
+              تعرّف على كيفية عمل ميزان ←
+            </Link>
           </div>
         </div>
       </section>
 
-      <section id="how" className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="font-display text-4xl font-bold">{c.howTitle}</h2>
-        <div className="mt-12 grid gap-10 md:grid-cols-3">
-          {c.steps.map((s, i) => (
-            <div key={s} className="border-t-2 border-primary pt-6">
-              <span className="font-display text-5xl font-bold text-coral/80">{i + 1}</span>
-              <p className="mt-3 font-display text-xl font-semibold">{s}</p>
+      {/* Audience */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <p className="text-sm font-bold text-coral">لمن صُممت ميزان</p>
+        <h2 className="mt-3 font-display text-4xl font-bold">للجهات التي تتعامل مع تفاصيل كثيرة</h2>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {audience.map((a) => (
+            <div key={a.t} className="border-t-2 border-primary pt-6">
+              <a.icon className="h-6 w-6 text-coral" />
+              <h3 className="mt-4 font-display text-lg font-semibold">{a.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.d}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="contact" className="px-6 pb-24">
-        <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground">
-          <img src={mark} alt="" className="mx-auto h-12 w-auto" />
-          <h2 className="mt-6 font-display text-4xl font-bold">{c.finalTitle}</h2>
-          <p className="mt-3 opacity-75">{c.finalSub}</p>
-          <a href="mailto:hello@mizan.sa" className="mt-8 inline-block rounded-full bg-accent px-8 py-3.5 font-medium text-accent-foreground">{c.cta}</a>
+      {/* Honesty band */}
+      <section className="mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-2xl border border-border bg-secondary/50 px-8 py-10">
+          <h2 className="font-display text-2xl font-bold">أين نقف اليوم؟</h2>
+          <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+            ميزان مشروع في مرحلة التطوير. بعض القدرات متاحة في النسخة الحالية، وبعضها لا يزال
+            ضمن خطة التطوير — ونحرص على توضيح الفرق بينهما في كل صفحات هذا الموقع. لا نعرض
+            إحصائيات أو نتائج أو شراكات قبل أن تكون موثقة فعلًا.
+          </p>
+          <Link to="/about" className="mt-5 inline-block text-sm font-bold text-coral transition-colors hover:text-coral/80">
+            اقرأ المزيد عن ميزان ←
+          </Link>
         </div>
       </section>
 
-      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">{c.foot}</footer>
-    </div>
+      {/* Final CTA */}
+      <section className="px-6 pb-24">
+        <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground">
+          <h2 className="font-display text-4xl font-bold">هل تناسب ميزان منشأتك؟</h2>
+          <p className="mx-auto mt-3 max-w-xl opacity-75">
+            يسعدنا التعرف على احتياجك والإجابة عن استفساراتك حول المنصة وتوجهاتها.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-8 inline-block rounded-full bg-accent px-8 py-3.5 font-medium text-accent-foreground"
+          >
+            تواصل معنا
+          </Link>
+        </div>
+      </section>
+    </MarketingShell>
   );
 }
