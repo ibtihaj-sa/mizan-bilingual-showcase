@@ -7,10 +7,11 @@ export type Employee = { id: string; name: string; role: string; department: str
 export type Contract = { id: string; title: string; clientId: string; value: number; startDate: string; endDate: string; createdAt: string };
 export type Activity = { id: string; text: string; at: string };
 
-export type MizanData = { clients: Client[]; employees: Employee[]; contracts: Contract[]; activity: Activity[] };
+export type Company = { name: string; cr: string; city: string; email: string };
+export type MizanData = { clients: Client[]; employees: Employee[]; contracts: Contract[]; activity: Activity[]; company: Company };
 
 const KEY = "mizan-data-v1";
-const empty: MizanData = { clients: [], employees: [], contracts: [], activity: [] };
+const empty: MizanData = { clients: [], employees: [], contracts: [], activity: [], company: { name: "", cr: "", city: "", email: "" } };
 let state: MizanData = empty;
 let loaded = false;
 const listeners = new Set<() => void>();
@@ -67,6 +68,11 @@ export function removeItem(kind: Kind, id: string) {
 
 export function clearAll() {
   set(empty);
+}
+
+export function saveCompany(c: Company) {
+  load();
+  set({ ...state, company: c, activity: [log("تم تحديث بيانات الشركة"), ...state.activity].slice(0, 50) });
 }
 
 export const DAY = 86_400_000;
