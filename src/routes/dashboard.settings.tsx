@@ -15,12 +15,15 @@ type CompanyForm = { name: string; cr: string; city: string; email: string };
 function Settings() {
   const { company } = useMizan();
   const [form, setForm] = useState<CompanyForm>({ name: "", cr: "", city: "", email: "" });
+  const seeded = useRef(false);
 
-  // Seed the form from the store after mount (store is empty during SSR).
+  // Seed the form once the store's saved company reaches the client (store is empty during SSR/hydration).
   useEffect(() => {
-    setForm({ name: company.name, cr: company.cr, city: company.city, email: company.email });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (!seeded.current && (company.name || company.cr || company.city || company.email)) {
+      seeded.current = true;
+      setForm({ name: company.name, cr: company.cr, city: company.city, email: company.email });
+    }
+  }, [company]);
 
   const set = (k: keyof CompanyForm) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm({ ...form, [k]: e.target.value });
