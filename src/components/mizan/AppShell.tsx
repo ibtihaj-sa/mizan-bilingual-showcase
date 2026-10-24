@@ -57,6 +57,59 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
+function SearchBox() {
+  const [q, setQ] = useState("");
+  const data = useMizan();
+  const term = q.trim();
+  const results = term
+    ? [
+        ...data.clients
+          .filter((c) => c.name.includes(term) || c.sector.includes(term) || c.city.includes(term))
+          .slice(0, 4)
+          .map((c) => ({ to: "/dashboard/clients", label: c.name, kind: "عميل" })),
+        ...data.employees
+          .filter((e) => e.name.includes(term) || e.role.includes(term) || e.department.includes(term))
+          .slice(0, 4)
+          .map((e) => ({ to: "/dashboard/employees", label: e.name, kind: "موظف" })),
+        ...data.contracts
+          .filter((c) => c.title.includes(term))
+          .slice(0, 4)
+          .map((c) => ({ to: "/dashboard/contracts", label: c.title, kind: "عقد" })),
+      ]
+    : [];
+
+  return (
+    <div className="relative hidden max-w-sm flex-1 md:block">
+      <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+      <input
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder="ابحث في ميزان..."
+        className="h-10 w-full rounded-lg border border-border bg-background pr-10 pl-3 text-sm focus:border-primary focus:outline-none"
+      />
+      {term && (
+        <div className="absolute inset-x-0 top-12 z-40 max-h-80 overflow-auto rounded-xl border border-border bg-card p-2 shadow-soft">
+          {results.length === 0 ? (
+            <p className="px-3 py-3 text-sm text-muted-foreground">لا نتائج مطابقة.</p>
+          ) : (
+            results.map((r, i) => (
+              <Link
+                key={`${r.label}-${i}`}
+                to={r.to}
+                onClick={() => setQ("")}
+                className="flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors hover:bg-muted"
+              >
+                <span className="truncate font-medium">{r.label}</span>
+                <span className="shrink-0 text-xs text-muted-foreground">{r.kind}</span>
+              </Link>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function AppShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const alerts = deriveAlerts(useMizan()).length;
@@ -89,10 +142,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <button aria-label="فتح القائمة" className="grid h-9 w-9 place-items-center rounded-lg hover:bg-muted lg:hidden" onClick={() => setOpen(true)}>
             <Menu className="h-5 w-5" />
           </button>
-          <div className="relative hidden max-w-sm flex-1 md:block">
-            <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input placeholder="ابحث في ميزان..." className="h-10 w-full rounded-lg border border-border bg-background pr-10 pl-3 text-sm focus:border-primary focus:outline-none" />
-          </div>
+          <SearchBox />
           <div className="mr-auto flex items-center gap-2">
             <Link to="/dashboard/alerts" aria-label="التنبيهات" className="relative grid h-10 w-10 place-items-center rounded-lg hover:bg-muted">
               <Bell className="h-5 w-5 text-primary" />
