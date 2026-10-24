@@ -142,10 +142,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <button aria-label="فتح القائمة" className="grid h-9 w-9 place-items-center rounded-lg hover:bg-muted lg:hidden" onClick={() => setOpen(true)}>
             <Menu className="h-5 w-5" />
           </button>
-          <div className="relative hidden max-w-sm flex-1 md:block">
-            <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input placeholder="ابحث في ميزان..." className="h-10 w-full rounded-lg border border-border bg-background pr-10 pl-3 text-sm focus:border-primary focus:outline-none" />
-          </div>
+          <SearchBox />
           <div className="mr-auto flex items-center gap-2">
             <Link to="/dashboard/alerts" aria-label="التنبيهات" className="relative grid h-10 w-10 place-items-center rounded-lg hover:bg-muted">
               <Bell className="h-5 w-5 text-primary" />
