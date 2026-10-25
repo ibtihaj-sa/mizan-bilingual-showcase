@@ -12,7 +12,7 @@ export function EntityForm({ open, onOpenChange, title, fields, onSubmit }: { op
     const clean = Object.fromEntries(Object.entries(values).map(([k, v]) => [k, v.trim()]));
     const missing = fields.find((f) => f.required && !clean[f.name]);
     if (missing) return setError(`الحقل «${missing.label}» مطلوب.`);
-    if (clean.startDate && clean.endDate && clean.endDate < clean.startDate) return setError("تاريخ الانتهاء يجب أن يكون بعد تاريخ البداية.");
+    if (clean["startDate"] && clean["endDate"] && clean["endDate"] < clean["startDate"]) return setError("تاريخ الانتهاء يجب أن يكون بعد تاريخ البداية.");
     setError("");
     onSubmit(clean);
     setValues({});
