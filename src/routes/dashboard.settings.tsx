@@ -29,6 +29,11 @@ function Settings() {
     setForm({ ...form, [k]: e.target.value });
 
   const save = () => {
+    const email = form.email.trim();
+    const cr = form.cr.trim();
+    if (!form.name.trim()) return void toast.error("اسم الشركة مطلوب.");
+    if (cr && !/^\d{10}$/.test(cr)) return void toast.error("السجل التجاري يجب أن يتكون من ١٠ أرقام.");
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return void toast.error("صيغة البريد الإلكتروني غير صحيحة.");
     saveCompany({
       name: form.name.trim(),
       cr: form.cr.trim(),
@@ -44,7 +49,7 @@ function Settings() {
       <div className="grid gap-6 lg:grid-cols-3">
         <Panel title="بيانات الشركة" className="lg:col-span-2">
           <div className="grid gap-4 p-5 sm:grid-cols-2">
-            <Field label="اسم الشركة"><input className={inputCls} value={form.name} onChange={set("name")} placeholder="مثال: شركة الأفق" /></Field>
+            <Field label="اسم الشركة *"><input className={inputCls} value={form.name} onChange={set("name")} placeholder="مثال: شركة الأفق" /></Field>
             <Field label="السجل التجاري"><input className={inputCls} dir="ltr" value={form.cr} onChange={set("cr")} /></Field>
             <Field label="المدينة"><input className={inputCls} value={form.city} onChange={set("city")} placeholder="الرياض" /></Field>
             <Field label="البريد الإلكتروني"><input type="email" className={inputCls} dir="ltr" value={form.email} onChange={set("email")} /></Field>

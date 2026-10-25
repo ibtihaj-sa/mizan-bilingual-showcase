@@ -60,19 +60,20 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
 function SearchBox() {
   const [q, setQ] = useState("");
   const data = useMizan();
-  const term = q.trim();
+  const term = q.trim().toLowerCase();
+  const has = (...xs: string[]) => xs.some((x) => x.toLowerCase().includes(term));
   const results = term
     ? [
         ...data.clients
-          .filter((c) => c.name.includes(term) || c.sector.includes(term) || c.city.includes(term))
+          .filter((c) => has(c.name, c.sector, c.city, c.email, c.phone))
           .slice(0, 4)
           .map((c) => ({ to: "/dashboard/clients", label: c.name, kind: "عميل" })),
         ...data.employees
-          .filter((e) => e.name.includes(term) || e.role.includes(term) || e.department.includes(term))
+          .filter((e) => has(e.name, e.role, e.department, e.email))
           .slice(0, 4)
           .map((e) => ({ to: "/dashboard/employees", label: e.name, kind: "موظف" })),
         ...data.contracts
-          .filter((c) => c.title.includes(term))
+          .filter((c) => has(c.title))
           .slice(0, 4)
           .map((c) => ({ to: "/dashboard/contracts", label: c.title, kind: "عقد" })),
       ]
