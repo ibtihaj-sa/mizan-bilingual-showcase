@@ -61,7 +61,7 @@ function SearchBox() {
   const [q, setQ] = useState("");
   const data = useMizan();
   const term = q.trim().toLowerCase();
-  const has = (...xs: string[]) => xs.some((x) => x.toLowerCase().includes(term));
+  const has = (...xs: (string | undefined)[]) => xs.some((x) => (x ?? "").toLowerCase().includes(term));
   const results = term
     ? [
         ...data.clients
