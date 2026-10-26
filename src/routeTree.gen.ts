@@ -15,8 +15,13 @@ import { Route as AiRouteImport } from './routes/ai'
 import { Route as ChallengesRouteImport } from './routes/challenges'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
 import { Route as DashboardAlertsRouteImport } from './routes/dashboard.alerts'
 import { Route as DashboardClientsRouteImport } from './routes/dashboard.clients'
@@ -55,14 +60,39 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
@@ -108,8 +138,13 @@ export interface FileRoutesByFullPath {
   '/challenges': typeof ChallengesRoute
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
   '/solutions': typeof SolutionsRoute
+  '/terms': typeof TermsRoute
   '/dashboard/alerts': typeof DashboardAlertsRoute
   '/dashboard/clients': typeof DashboardClientsRoute
   '/dashboard/contracts': typeof DashboardContractsRoute
@@ -124,8 +159,13 @@ export interface FileRoutesByTo {
   '/ai': typeof AiRoute
   '/challenges': typeof ChallengesRoute
   '/contact': typeof ContactRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
   '/solutions': typeof SolutionsRoute
+  '/terms': typeof TermsRoute
   '/dashboard/alerts': typeof DashboardAlertsRoute
   '/dashboard/clients': typeof DashboardClientsRoute
   '/dashboard/contracts': typeof DashboardContractsRoute
@@ -142,8 +182,13 @@ export interface FileRoutesById {
   '/challenges': typeof ChallengesRoute
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
   '/solutions': typeof SolutionsRoute
+  '/terms': typeof TermsRoute
   '/dashboard/alerts': typeof DashboardAlertsRoute
   '/dashboard/clients': typeof DashboardClientsRoute
   '/dashboard/contracts': typeof DashboardContractsRoute
@@ -161,8 +206,13 @@ export interface FileRouteTypes {
     | '/challenges'
     | '/contact'
     | '/dashboard'
+    | '/forgot-password'
     | '/how-it-works'
+    | '/login'
+    | '/privacy'
+    | '/signup'
     | '/solutions'
+    | '/terms'
     | '/dashboard/alerts'
     | '/dashboard/clients'
     | '/dashboard/contracts'
@@ -177,8 +227,13 @@ export interface FileRouteTypes {
     | '/ai'
     | '/challenges'
     | '/contact'
+    | '/forgot-password'
     | '/how-it-works'
+    | '/login'
+    | '/privacy'
+    | '/signup'
     | '/solutions'
+    | '/terms'
     | '/dashboard/alerts'
     | '/dashboard/clients'
     | '/dashboard/contracts'
@@ -194,8 +249,13 @@ export interface FileRouteTypes {
     | '/challenges'
     | '/contact'
     | '/dashboard'
+    | '/forgot-password'
     | '/how-it-works'
+    | '/login'
+    | '/privacy'
+    | '/signup'
     | '/solutions'
+    | '/terms'
     | '/dashboard/alerts'
     | '/dashboard/clients'
     | '/dashboard/contracts'
@@ -212,8 +272,13 @@ export interface RootRouteChildren {
   ChallengesRoute: typeof ChallengesRoute
   ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRouteWithChildren
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SignupRoute: typeof SignupRoute
   SolutionsRoute: typeof SolutionsRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -260,6 +325,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-it-works': {
       id: '/how-it-works'
       path: '/how-it-works'
@@ -267,11 +339,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
       fullPath: '/solutions'
       preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard/': {
@@ -357,8 +457,13 @@ const rootRouteChildren: RootRouteChildren = {
   ChallengesRoute: ChallengesRoute,
   ContactRoute: ContactRoute,
   DashboardRoute: DashboardRouteWithChildren,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   HowItWorksRoute: HowItWorksRoute,
+  LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
+  SignupRoute: SignupRoute,
   SolutionsRoute: SolutionsRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
