@@ -112,6 +112,9 @@ export function MarketingShell({ children }: { children: ReactNode }) {
               <Link to="/dashboard" className="text-muted-foreground transition-colors hover:text-foreground">
                 لوحة التحكم
               </Link>
+              <Link to="/login" className="text-muted-foreground transition-colors hover:text-foreground">تسجيل الدخول</Link>
+              <Link to="/terms" className="text-muted-foreground transition-colors hover:text-foreground">الشروط والأحكام</Link>
+              <Link to="/privacy" className="text-muted-foreground transition-colors hover:text-foreground">سياسة الخصوصية</Link>
             </nav>
           </div>
           <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
