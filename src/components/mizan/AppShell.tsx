@@ -22,8 +22,8 @@ function Brand() {
         <img src={mark} alt="" className="h-5 w-auto" />
       </span>
       <span className="leading-tight">
-        <span className="block text-lg font-extrabold">ميزان</span>
-        <span className="block text-[10px] font-bold tracking-[0.3em] opacity-60">MIZAN</span>
+        <span className="block text-lg font-extrabold">قوّة</span>
+        <span className="block text-[10px] font-bold tracking-[0.3em] opacity-60">QUWWA</span>
       </span>
     </Link>
   );
@@ -85,7 +85,7 @@ function SearchBox() {
       <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="ابحث في ميزان..."
+        placeholder="ابحث في قوّة..."
         className="h-10 w-full rounded-lg border border-border bg-background pr-10 pl-3 text-sm focus:border-primary focus:outline-none"
       />
       {term && (

@@ -6,7 +6,7 @@ import { clearAll, saveCompany, useMizan } from "@/lib/mizan-store";
 import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/dashboard/settings")({
-  head: pageHead("الإعدادات", "إعدادات حساب الشركة في ميزان."),
+  head: pageHead("الإعدادات", "إعدادات حساب الشركة في قوّة."),
   component: Settings,
 });
 

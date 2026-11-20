@@ -9,7 +9,7 @@ import { contractStatus, fmtDate, fmtSAR, removeItem, useMizan } from "@/lib/miz
 import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/dashboard/contracts")({
-  head: pageHead("العقود", "متابعة عقود العملاء ومواعيد التجديد في ميزان."),
+  head: pageHead("العقود", "متابعة عقود العملاء ومواعيد التجديد في قوّة."),
   component: Contracts,
 });
 

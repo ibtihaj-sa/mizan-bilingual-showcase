@@ -3,7 +3,7 @@ import { AuthCard } from "@/components/mizan/AuthCard";
 import { isEmail } from "@/lib/validation";
 import { pageHead } from "@/lib/mizan-head";
 
-export const Route = createFileRoute("/login")({ head: pageHead("تسجيل الدخول", "الدخول إلى حساب منشأتك في ميزان."), component: Login });
+export const Route = createFileRoute("/login")({ head: pageHead("تسجيل الدخول", "الدخول إلى حساب منشأتك في قوّة."), component: Login });
 
 function Login() {
   return (

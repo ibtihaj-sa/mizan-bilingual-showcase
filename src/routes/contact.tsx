@@ -9,7 +9,7 @@ import { pageHead } from "@/lib/mizan-head";
 export const Route = createFileRoute("/contact")({
   head: pageHead(
     "تواصل معنا",
-    "للاستفسارات التجارية وطلبات العرض التوضيحي حول منصة ميزان MIZAN — أرسل لنا استفسارك وسنعود إليك.",
+    "للاستفسارات التجارية وطلبات العرض التوضيحي حول منصة قوّة QUWWA — أرسل لنا استفسارك وسنعود إليك.",
   ),
   component: Contact,
 });
@@ -77,7 +77,7 @@ function Contact() {
           يسعدنا سماعك
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          لأي استفسار تجاري أو طلب عرض توضيحي حول ميزان، اترك لنا رسالتك عبر النموذج
+          لأي استفسار تجاري أو طلب عرض توضيحي حول قوّة، اترك لنا رسالتك عبر النموذج
           التالي.
         </p>
       </section>

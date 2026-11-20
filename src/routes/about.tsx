@@ -6,7 +6,7 @@ import { pageHead } from "@/lib/mizan-head";
 export const Route = createFileRoute("/about")({
   head: pageHead(
     "من نحن",
-    "تعرّف على ميزان MIZAN: منصة تقنية سعودية قيد التطوير لتنظيم الأعمال والمستندات والمتطلبات التشغيلية — رؤيتنا ورسالتنا وقيمنا.",
+    "تعرّف على قوّة QUWWA: منصة تقنية سعودية قيد التطوير لتنظيم الأعمال والمستندات والمتطلبات التشغيلية — رؤيتنا ورسالتنا وقيمنا.",
   ),
   component: About,
 });
@@ -27,10 +27,10 @@ function About() {
           من نحن
         </p>
         <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl">
-          ميزان — منصة تقنية سعودية لتنظيم الأعمال
+          قوّة — منصة تقنية سعودية لتنظيم الأعمال
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          ميزان MIZAN منصة تقنية قيد التطوير، هدفها مساعدة الشركات على تنظيم أعمالها
+          قوّة QUWWA منصة تقنية قيد التطوير، هدفها مساعدة الشركات على تنظيم أعمالها
           وإدارة عملياتها ومستنداتها ومتطلباتها التشغيلية بصورة أكثر وضوحًا وكفاءة،
           بواجهة عربية أولًا صُممت لطريقة عمل الشركات في السعودية والمنطقة.
         </p>
@@ -81,7 +81,7 @@ function About() {
         <div className="rounded-2xl border border-border bg-secondary/50 px-8 py-10">
           <h2 className="font-display text-2xl font-bold">مرحلة المشروع</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
-            ميزان في مرحلة التطوير حاليًا. النسخة الحالية تتضمن أساسيات تنظيم البيانات
+            قوّة في مرحلة التطوير حاليًا. النسخة الحالية تتضمن أساسيات تنظيم البيانات
             والمتابعات والتقارير، بينما لا تزال قدرات أخرى — مثل ربط الأدلة بالمتطلبات
             والمساعد الذكي — ضمن خطة التطوير. نفضل الوضوح على المبالغة: ما تراه في هذا
             الموقع موصوف بحالته الفعلية.
@@ -91,7 +91,7 @@ function About() {
 
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground">
-          <h2 className="font-display text-3xl font-bold">هل تريد التعرف على ميزان عن قرب؟</h2>
+          <h2 className="font-display text-3xl font-bold">هل تريد التعرف على قوّة عن قرب؟</h2>
           <p className="mx-auto mt-3 max-w-xl opacity-75">
             تواصل معنا لأي استفسار تجاري أو لطلب عرض توضيحي.
           </p>

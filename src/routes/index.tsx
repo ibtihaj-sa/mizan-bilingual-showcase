@@ -6,7 +6,7 @@ import { pageHead } from "@/lib/mizan-head";
 export const Route = createFileRoute("/")({
   head: pageHead(
     "منصة تقنية سعودية لتنظيم الأعمال والمستندات",
-    "ميزان MIZAN منصة تقنية سعودية قيد التطوير تساعد الشركات على تنظيم أعمالها ومستنداتها ومتطلباتها التشغيلية بصورة أوضح وأكثر كفاءة.",
+    "قوّة QUWWA منصة تقنية سعودية قيد التطوير تساعد الشركات على تنظيم أعمالها ومستنداتها ومتطلباتها التشغيلية بصورة أوضح وأكثر كفاءة.",
   ),
   component: Home,
 });
@@ -40,7 +40,7 @@ function Home() {
             <span className="text-coral">تنظيم أعمالك.</span>
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-            ميزان منصة تقنية تهدف إلى مساعدة الشركات على تنظيم أعمالها وإدارة عملياتها
+            قوّة منصة تقنية تهدف إلى مساعدة الشركات على تنظيم أعمالها وإدارة عملياتها
             ومستنداتها ومتطلباتها التشغيلية بصورة أكثر وضوحًا وكفاءة — من مكان واحد.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -54,7 +54,7 @@ function Home() {
               to="/how-it-works"
               className="rounded-full border border-border px-7 py-3.5 font-medium transition-colors hover:bg-muted"
             >
-              استكشف ميزان
+              استكشف قوّة
             </Link>
           </div>
         </div>
@@ -97,10 +97,10 @@ function Home() {
       {/* Capabilities */}
       <section className="bg-card py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-sm font-bold text-coral">ماذا تقدم ميزان</p>
+          <p className="text-sm font-bold text-coral">ماذا تقدم قوّة</p>
           <h2 className="mt-3 font-display text-4xl font-bold">من التشتت إلى التنظيم</h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            تركز ميزان على تحويل المعلومات المتفرقة إلى صورة واضحة قابلة للمتابعة والمراجعة،
+            تركز قوّة على تحويل المعلومات المتفرقة إلى صورة واضحة قابلة للمتابعة والمراجعة،
             مع الاستفادة من الذكاء الاصطناعي في التحليل والتنظيم.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -116,7 +116,7 @@ function Home() {
           </div>
           <div className="mt-10">
             <Link to="/how-it-works" className="text-sm font-bold text-coral transition-colors hover:text-coral/80">
-              تعرّف على كيفية عمل ميزان ←
+              تعرّف على كيفية عمل قوّة ←
             </Link>
           </div>
         </div>
@@ -124,7 +124,7 @@ function Home() {
 
       {/* Audience */}
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm font-bold text-coral">لمن صُممت ميزان</p>
+        <p className="text-sm font-bold text-coral">لمن صُممت قوّة</p>
         <h2 className="mt-3 font-display text-4xl font-bold">للجهات التي تتعامل مع تفاصيل كثيرة</h2>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {audience.map((a) => (
@@ -142,12 +142,12 @@ function Home() {
         <div className="rounded-2xl border border-border bg-secondary/50 px-8 py-10">
           <h2 className="font-display text-2xl font-bold">أين نقف اليوم؟</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
-            ميزان مشروع في مرحلة التطوير. بعض القدرات متاحة في النسخة الحالية، وبعضها لا يزال
+            قوّة مشروع في مرحلة التطوير. بعض القدرات متاحة في النسخة الحالية، وبعضها لا يزال
             ضمن خطة التطوير — ونحرص على توضيح الفرق بينهما في كل صفحات هذا الموقع. لا نعرض
             إحصائيات أو نتائج أو شراكات قبل أن تكون موثقة فعلًا.
           </p>
           <Link to="/about" className="mt-5 inline-block text-sm font-bold text-coral transition-colors hover:text-coral/80">
-            اقرأ المزيد عن ميزان ←
+            اقرأ المزيد عن قوّة ←
           </Link>
         </div>
       </section>
@@ -155,7 +155,7 @@ function Home() {
       {/* Final CTA */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground">
-          <h2 className="font-display text-4xl font-bold">هل تناسب ميزان منشأتك؟</h2>
+          <h2 className="font-display text-4xl font-bold">هل تناسب قوّة منشأتك؟</h2>
           <p className="mx-auto mt-3 max-w-xl opacity-75">
             يسعدنا التعرف على احتياجك والإجابة عن استفساراتك حول المنصة وتوجهاتها.
           </p>

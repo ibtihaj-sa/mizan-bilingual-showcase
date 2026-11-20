@@ -5,7 +5,7 @@ import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/ai")({
   head: pageHead(
-    "الذكاء الاصطناعي في ميزان",
+    "الذكاء الاصطناعي في قوّة",
     "دور الذكاء الاصطناعي في تنظيم المعلومات وتحليلها ودعم المستخدم — أداة مساعدة للمراجعة واتخاذ القرار، وليست بديلًا عن المسؤول البشري.",
   ),
   component: AiPage,
@@ -55,7 +55,7 @@ function AiPage() {
           </span>
           <h2 className="mt-4 font-display text-lg font-bold">القرار للإنسان</h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            مخرجات الذكاء الاصطناعي في ميزان أداة مساعدة للمراجعة واتخاذ القرار، وليست
+            مخرجات الذكاء الاصطناعي في قوّة أداة مساعدة للمراجعة واتخاذ القرار، وليست
             بديلًا عن المسؤول البشري في أي حال.
           </p>
         </div>
@@ -65,7 +65,7 @@ function AiPage() {
         <div className="rounded-2xl border border-border bg-secondary/50 px-8 py-10">
           <h2 className="font-display text-2xl font-bold">الحالة الحالية</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
-            قدرات الذكاء الاصطناعي في ميزان لا تزال ضمن خطة التطوير ولم تُطرح في النسخة
+            قدرات الذكاء الاصطناعي في قوّة لا تزال ضمن خطة التطوير ولم تُطرح في النسخة
             الحالية. سنعلن عنها عند جاهزيتها، وسنوضح حينها بالتفصيل ما تقوم به وما لا
             تقوم به، وحدود الاعتماد عليها.
           </p>
@@ -74,7 +74,7 @@ function AiPage() {
 
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground">
-          <h2 className="font-display text-3xl font-bold">مهتم بمستقبل ميزان؟</h2>
+          <h2 className="font-display text-3xl font-bold">مهتم بمستقبل قوّة؟</h2>
           <p className="mx-auto mt-3 max-w-xl opacity-75">
             تواصل معنا لمعرفة المزيد عن خطة التطوير وتوجهات المنصة.
           </p>

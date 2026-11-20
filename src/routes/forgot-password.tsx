@@ -3,7 +3,7 @@ import { AuthCard } from "@/components/mizan/AuthCard";
 import { isEmail } from "@/lib/validation";
 import { pageHead } from "@/lib/mizan-head";
 
-export const Route = createFileRoute("/forgot-password")({ head: pageHead("استعادة كلمة المرور", "طلب رابط لإعادة تعيين كلمة مرور حسابك في ميزان."), component: Forgot });
+export const Route = createFileRoute("/forgot-password")({ head: pageHead("استعادة كلمة المرور", "طلب رابط لإعادة تعيين كلمة مرور حسابك في قوّة."), component: Forgot });
 
 function Forgot() {
   return (

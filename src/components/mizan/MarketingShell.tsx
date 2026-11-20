@@ -21,9 +21,9 @@ export function MarketingShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <img src={mark} alt="ميزان MIZAN" className="h-8 w-auto" />
+            <img src={mark} alt="قوّة QUWWA" className="h-8 w-auto" />
             <span className="font-display text-xl font-bold">
-              ميزان <span className="text-sm font-medium text-muted-foreground">MIZAN</span>
+              قوّة <span className="text-sm font-medium text-muted-foreground">QUWWA</span>
             </span>
           </Link>
 
@@ -93,10 +93,10 @@ export function MarketingShell({ children }: { children: ReactNode }) {
             <div className="max-w-sm">
               <div className="flex items-center gap-3">
                 <img src={mark} alt="" className="h-8 w-auto" />
-                <span className="font-display text-lg font-bold">ميزان MIZAN</span>
+                <span className="font-display text-lg font-bold">قوّة QUWWA</span>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                منصة تقنية سعودية قيد التطوير، تهدف إلى مساعدة الشركات على تنظيم أعمالها
+                منظومة إدارة وتشغيل المنشآت. منصة سعودية قيد التطوير تهدف إلى مساعدة الشركات على تنظيم أعمالها
                 ومستنداتها ومتطلباتها التشغيلية بصورة أوضح وأكثر كفاءة.
               </p>
             </div>
@@ -118,7 +118,7 @@ export function MarketingShell({ children }: { children: ReactNode }) {
             </nav>
           </div>
           <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
-            © 2026 ميزان MIZAN. جميع الحقوق محفوظة.
+            © 2026 قوّة QUWWA. جميع الحقوق محفوظة.
           </div>
         </div>
       </footer>

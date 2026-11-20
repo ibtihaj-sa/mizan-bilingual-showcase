@@ -3,11 +3,11 @@ import { AuthCard } from "@/components/mizan/AuthCard";
 import { isEmail, isStrongPassword, TRIAL_DAYS } from "@/lib/validation";
 import { pageHead } from "@/lib/mizan-head";
 
-export const Route = createFileRoute("/signup")({ head: pageHead("إنشاء حساب", `أنشئ حساب منشأتك في ميزان مع تجربة مجانية لمدة ${TRIAL_DAYS} يومًا.`), component: Signup });
+export const Route = createFileRoute("/signup")({ head: pageHead("إنشاء حساب", `أنشئ حساب منشأتك في قوّة مع تجربة مجانية لمدة ${TRIAL_DAYS} يومًا.`), component: Signup });
 
 function Signup() {
   return (
-    <AuthCard title="إنشاء حساب" text="سجّل منشأتك في ميزان." submit="إنشاء الحساب"
+    <AuthCard title="إنشاء حساب" text="سجّل منشأتك في قوّة." submit="إنشاء الحساب"
       fields={[
         { key: "name", label: "الاسم الكامل", type: "text", validate: (v) => (!v.trim() ? "الاسم مطلوب." : null) },
         { key: "company", label: "اسم المنشأة", type: "text", validate: (v) => (!v.trim() ? "اسم المنشأة مطلوب." : null) },

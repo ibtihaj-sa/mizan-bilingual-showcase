@@ -50,7 +50,7 @@ function Solutions() {
           استخدامات عملية لفرقك اليومية
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          تستهدف ميزان أربعة مجالات استخدام رئيسية، تتطور تدريجيًا مع تطور المنصة.
+          تستهدف قوّة أربعة مجالات استخدام رئيسية، تتطور تدريجيًا مع تطور المنصة.
         </p>
       </section>
 
@@ -78,7 +78,7 @@ function Solutions() {
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground">
           <h2 className="font-display text-3xl font-bold">هل لديك استخدام محدد في ذهنك؟</h2>
           <p className="mx-auto mt-3 max-w-xl opacity-75">
-            أخبرنا عن احتياج منشأتك، وسنوضح لك كيف يمكن لميزان أن تخدمه.
+            أخبرنا عن احتياج منشأتك، وسنوضح لك كيف يمكن لقوّة أن تخدمه.
           </p>
           <Link
             to="/contact"

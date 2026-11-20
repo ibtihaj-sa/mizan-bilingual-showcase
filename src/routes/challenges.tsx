@@ -6,7 +6,7 @@ import { pageHead } from "@/lib/mizan-head";
 export const Route = createFileRoute("/challenges")({
   head: pageHead(
     "التحديات التي نعالجها",
-    "تشتت المستندات والمعلومات، صعوبة متابعة المتطلبات والإجراءات، غياب الرؤية الواضحة للنواقص، والوقت المستهلك في التنظيم — هذه التحديات التي تستهدفها ميزان.",
+    "تشتت المستندات والمعلومات، صعوبة متابعة المتطلبات والإجراءات، غياب الرؤية الواضحة للنواقص، والوقت المستهلك في التنظيم — هذه التحديات التي تستهدفها قوّة.",
   ),
   component: Challenges,
 });
@@ -46,7 +46,7 @@ function Challenges() {
           مشكلات مألوفة لدى كثير من المنشآت
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          وُلدت فكرة ميزان من ملاحظة تحديات متكررة تواجه الشركات في تنظيم أعمالها
+          وُلدت فكرة قوّة من ملاحظة تحديات متكررة تواجه الشركات في تنظيم أعمالها
           ومعلوماتها. هذه هي التحديات التي نركز على معالجتها.
         </p>
       </section>
@@ -68,7 +68,7 @@ function Challenges() {
 
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground">
-          <h2 className="font-display text-3xl font-bold">كيف تتعامل ميزان مع هذه التحديات؟</h2>
+          <h2 className="font-display text-3xl font-bold">كيف تتعامل قوّة مع هذه التحديات؟</h2>
           <p className="mx-auto mt-3 max-w-xl opacity-75">
             تعرّف على طريقة عمل المنصة والقدرات التي تستهدف معالجة هذه المشكلات.
           </p>
@@ -76,7 +76,7 @@ function Challenges() {
             to="/how-it-works"
             className="mt-8 inline-block rounded-full bg-accent px-8 py-3.5 font-medium text-accent-foreground"
           >
-            كيف تعمل ميزان
+            كيف تعمل قوّة
           </Link>
         </div>
       </section>

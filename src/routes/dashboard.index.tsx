@@ -9,7 +9,7 @@ import { contractStatus, daysUntil, deriveAlerts, fmtDate, useMizan } from "@/li
 import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/dashboard/")({
-  head: pageHead("نظرة عامة", "لوحة ميزان: العملاء والموظفون والعقود والتنبيهات في مكان واحد."),
+  head: pageHead("نظرة عامة", "لوحة قوّة: العملاء والموظفون والعقود والتنبيهات في مكان واحد."),
   component: Overview,
 });
 
@@ -26,7 +26,7 @@ function Overview() {
   return (
     <>
       <PageHeader
-        title="مرحبًا بك في ميزان"
+        title="مرحبًا بك في قوّة"
         text="كل أعمالك في مكان واحد، ورؤية أوضح لاتخاذ القرار."
         actions={<MButton variant="accent" onClick={() => setModal("contract")}><Plus />عقد جديد</MButton>}
       />

@@ -9,7 +9,7 @@ import { fmtDate, removeItem, useMizan } from "@/lib/mizan-store";
 import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/dashboard/clients")({
-  head: pageHead("العملاء", "إدارة عملاء شركتك في ميزان."),
+  head: pageHead("العملاء", "إدارة عملاء شركتك في قوّة."),
   component: Clients,
 });
 

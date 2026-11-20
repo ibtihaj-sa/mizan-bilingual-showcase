@@ -5,7 +5,7 @@ import { pageHead } from "@/lib/mizan-head";
 
 export const Route = createFileRoute("/how-it-works")({
   head: pageHead(
-    "كيف تعمل ميزان",
+    "كيف تعمل قوّة",
     "تنظيم المستندات والمعلومات، ربط الأدلة والمتطلبات، تحديد النواقص، والاستفادة من الذكاء الاصطناعي — مع توضيح ما هو متاح حاليًا وما هو ضمن خطة التطوير.",
   ),
   component: HowItWorks,
@@ -51,7 +51,7 @@ function HowItWorks() {
       <section className="mx-auto max-w-4xl px-6 pb-16 pt-16 text-center">
         <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-muted-foreground shadow-soft">
           <span className="h-2 w-2 rounded-full bg-coral" />
-          كيف تعمل ميزان
+          كيف تعمل قوّة
         </p>
         <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl">
           من معلومات متفرقة إلى صورة واضحة
@@ -100,7 +100,7 @@ function HowItWorks() {
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground">
           <h2 className="font-display text-3xl font-bold">ما الاستخدامات التي تخدمها هذه القدرات؟</h2>
           <p className="mx-auto mt-3 max-w-xl opacity-75">
-            اطلع على الحلول والاستخدامات العملية التي تستهدفها ميزان.
+            اطلع على الحلول والاستخدامات العملية التي تستهدفها قوّة.
           </p>
           <Link
             to="/solutions"
